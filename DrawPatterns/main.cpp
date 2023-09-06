@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 // 1
 // 12
@@ -9,11 +10,11 @@ void numericHollowHalfPyramid(int n) {
   for (int row = 0; row < n; row++) {
     for (int col = 0; col <= row; col++) {
       if (col == 0 || col == row || row == n - 1)
-        std::cout << col + 1;
+        cout << col + 1;
       else
-        std::cout << " ";
+        cout << " ";
     }
-    std::cout << "\n";
+    cout << "\n";
   }
 }
 
@@ -26,11 +27,11 @@ void numericHollowInvertedHalfPyramid(int n) {
   for (int row = 0; row < n; row++) {
     for (int col = row; col < n; col++) {
       if (row == 0 || row == col || col == n - 1)
-        std::cout << col + 1;
+        cout << col + 1;
       else
-        std::cout << " ";
+        cout << " ";
     }
-    std::cout << "\n";
+    cout << "\n";
   }
 }
 
@@ -44,22 +45,22 @@ void numericPalindromeEquilateralTriangle(int n) {
     int c = 1;
     for (int col = 0; col < n; col++) {
       if (col < n - row - 1) {
-        std::cout << " ";
+        cout << " ";
       } else {
-        std::cout << c;
+        cout << c;
         c++;
       }
     }
     c = c - 2;
     for (int col = n + 1; col < n + 1 + row; col++) {
       if (col < n - row - 1) {
-        std::cout << " ";
+        cout << " ";
       } else {
-        std::cout << c;
+        cout << c;
         c--;
       }
     }
-    std::cout << "\n";
+    cout << "\n";
   }
 }
 
@@ -75,17 +76,17 @@ void numericPalindromeEquilateralTriangle(int n) {
 void solidHalfDiamond(int n) {
   for (int row = 0; row < n; row++) {
     for (int col = 0; col < row + 1; col++) {
-      std::cout << "*";
+      cout << "*";
     }
-    std::cout << "\n";
+    cout << "\n";
   }
   int k = n - 1;
   for (int row = n; row < n * 2 - 1; row++) {
     for (int col = 0; col < k; col++) {
-      std::cout << "*";
+      cout << "*";
     }
     k--;
-    std::cout << "\n";
+    cout << "\n";
   }
 }
 
@@ -108,17 +109,17 @@ void fancyPattern1(int n) {
     for (int col = 0; col < 17; col++) {
       if (col >= start_index && col <= end_index) {
         if (flag) {
-          std::cout << row + 1;
+          cout << row + 1;
           flag = false;
         } else {
-          std::cout << "*";
+          cout << "*";
           flag = true;
         }
       } else
-        std::cout << "*";
+        cout << "*";
     }
     k += 2;
-    std::cout << "\n";
+    cout << "\n";
   }
 }
 
@@ -137,16 +138,16 @@ void fancyPattern2(int n) {
     int flag = true;
     for(int col=0;col<odd;col++){
       if(flag){
-        std::cout<<c;
+        cout<<c;
         c++;
         flag = false;
       }
       else{
-       std::cout<<"*";
+       cout<<"*";
         flag = true;
       }
     }
-    std::cout<<"\n";
+    cout<<"\n";
     odd +=2;
   }
   c--;
@@ -157,17 +158,17 @@ void fancyPattern2(int n) {
     int k=start;
     for(int col=0;col<odd;col++){
       if(flag){
-        std::cout<<k;
+        cout<<k;
         k++;
         flag = false;
       }
       else{
-       std::cout<<"*";
+       cout<<"*";
         flag = true;
       }
     }
     start = start-(n-row-1);
-    std::cout<<"\n";
+    cout<<"\n";
     odd -=2;
   }
 }
@@ -185,36 +186,36 @@ void fancyPattern2(int n) {
 // *1*
 // *
 void fancyPattern3(int n){
-  std::cout<<"*"<<"\n";
+  cout<<"*"<<"\n";
   int colCount =1;
   for(int row=0;row<n;row++){
     int c = 1;
-    std::cout<<"*";
+    cout<<"*";
     for(int col=0;col<colCount;col++){
-      std::cout<<c;
+      cout<<c;
       if(col>colCount/2-1)
         c--;
       else
         c++;
     }
-    std::cout<<"*"<<"\n";
+    cout<<"*"<<"\n";
     colCount +=2;
   }
   colCount -=4;
   for(int row=0;row<n-1;row++){
     int c = 1;
-    std::cout<<"*";
+    cout<<"*";
     for(int col=0;col<colCount;col++){
-      std::cout<<c;
+      cout<<c;
       if(col>colCount/2-1)
         c--;
       else
         c++;
     }
-    std::cout<<"*"<<"\n";
+    cout<<"*"<<"\n";
     colCount -=2;
   }
-  std::cout<<"*"<<"\n";
+  cout<<"*"<<"\n";
 }
 
 // 1
@@ -226,10 +227,10 @@ void floydTrianglePattern(int n){
   int c = 1;
   for(int row=0;row<n;row++){
     for(int col=0;col<=row;col++){
-      std::cout<<c;
+      cout<<c;
       c++;
     }
-    std::cout<<"\n";
+    cout<<"\n";
   }
 }
 
@@ -242,10 +243,10 @@ void pascalsTrianglePattern(int n){
   for(int row=1;row<=n;row++){
     int c =1;
     for(int col=1;col<=row;col++){
-      std::cout<<c<<" ";
+      cout<<c<<" ";
       c = c*(row-col)/col;
     }
-    std::cout<<"\n";
+    cout<<"\n";
   }
 }
 
@@ -263,20 +264,20 @@ void butterflyPattern(int n){
   for(int row=0;row<n;row++){
     for(int col=0;col<n*2;col++){
       if(col<=row || col>=n*2-row-1)
-        std::cout<<"*";
+        cout<<"*";
       else
-        std::cout<<" ";
+        cout<<" ";
     }
-    std::cout<<"\n";
+    cout<<"\n";
   }
   for(int row=0;row<n;row++){
     for(int col=0;col<n*2;col++){
       if(col<n-row || col>=n+row)
-        std::cout<<"*";
+        cout<<"*";
       else
-        std::cout<<" ";
+        cout<<" ";
     }
-    std::cout<<"\n";
+    cout<<"\n";
   }
   
 }
