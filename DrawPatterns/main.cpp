@@ -64,6 +64,37 @@ void numericPalindromeEquilateralTriangle(int n) {
   }
 }
 
+//    *    
+//   ***
+//  *****
+// *******
+//  *****
+//   ***
+//    *
+void solidDiamond(int n){
+  //count declare to calculate the codition to print space in invert triangle phase.
+  int count = 1;
+  for(int i=0;i<2*n-1;i++){
+    for(int j=0;j<2*n-1;j++){
+      if(i<n){
+        if(j<n-i-1 || j>n+i-1)
+          cout<<" ";
+        else
+          cout<<"*";  
+      }
+      else{
+        if(j<i-n+1 || j>=2*n-count-1)
+          cout<<" ";
+        else
+          cout<<"*";  
+      }
+    }
+    if(i>=n)
+      count++;
+    cout<<endl;
+  }
+}
+
 // *
 // **
 // ***
@@ -286,6 +317,7 @@ int main() {
   // numericHollowHalfPyramid(5);
   // numericHollowInvertedHalfPyramid(5);
   // numericPalindromeEquilateralTriangle(5);
+  // solidDiamond(5);
   // solidHalfDiamond(5);
   // fancyPattern1(9);
   // fancyPattern2(4);
